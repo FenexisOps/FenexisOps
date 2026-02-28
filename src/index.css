@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* Unified Theme — Vapor Clinic Aesthetics (Preset D) */
+  :root {
+    --color-primary: #0A0A14;
+    --color-accent: #7B61FF;
+    --color-background: #F0EFF4;
+    --color-dark: #18181B;
+
+    --color-background-app: #0A0A14;
+    --color-text-main: #F0EFF4;
+
+    --font-heading: "Sora";
+    --font-drama: "Instrument Serif";
+    --font-data: "Fira Code";
+  }
+
+  body {
+    background-color: var(--color-background-app, var(--color-background));
+    color: var(--color-text-main, var(--color-dark));
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .clip-slider {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .group:hover .clip-slider {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Micro-Interactions */
+.magnetic-btn {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.magnetic-btn:hover {
+  transform: scale(1.03) translateY(-1px);
+}
